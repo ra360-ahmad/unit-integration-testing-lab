@@ -14,10 +14,9 @@ def test_withdraw_valid():
 def test_withdraw_insufficient():
     with pytest.raises(ValueError):
         withdraw(500, 1000)
-
 def test_calculate_interest_valid():
     result = calculate_interest(1000, 10, 2)
-    assert result == 1210.0
+    assert result == pytest.approx(1210.0)
 
 def test_calculate_interest_invalid():
     with pytest.raises(ValueError):
